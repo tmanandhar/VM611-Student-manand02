@@ -1,0 +1,22 @@
+{
+  "java.project.sourcePaths": [
+    "src",
+    "test"
+  ],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar"
+  ],
+  "java.format.settings.url": ".vscode/java-formatter.xml",
+  "notebook.codeActionsOnSave": {},
+  "java.cleanup.actionsOnSave": [
+    "addOverride",
+    "stringConcatToTextBlock",
+    "lambdaExpressionFromAnonymousClass",
+    "lambdaExpression",
+    "switchExpression",
+    "tryWithResource"
+  ],
+  "java.saveActions.organizeImports": true,
+  "editor.formatOnSave": true
+}
