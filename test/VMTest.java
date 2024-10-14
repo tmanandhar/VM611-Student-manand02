@@ -62,4 +62,90 @@ public class VMTest {
 
         assertEquals((Integer) 1, vars.get("x"));
     }
+
+    @Test
+    public void testModCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 5
+            load_const 7
+            mod
+            store_local x
+            """);
+
+        assertEquals((Integer) 2, vars.get("x"));
+    }
+
+    @Test
+    public void testEqCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpEQ
+            store_local x
+            """);
+
+        assertEquals((Integer) 1, vars.get("x"));
+    }
+
+    @Test
+    public void testNeqCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpNEQ
+            store_local x
+            """);
+
+        assertEquals((Integer) 0, vars.get("x"));
+    }
+
+    @Test
+    public void testCmpLtCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpLT
+            store_local x
+            """);
+
+        assertEquals((Integer) 0, vars.get("x"));
+    }
+
+    @Test
+    public void testCmpLteCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpLTE
+            store_local x
+            """);
+
+        assertEquals((Integer) 0, vars.get("x"));
+    }
+
+    @Test
+    public void testCmpGtCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpGT
+            store_local x
+            """);
+
+        assertEquals((Integer) 1, vars.get("x"));
+    }
+
+    @Test
+    public void testCmpGteCommand() {
+        Map<String, Integer> vars = TestUtil.testCode("""
+            load_const 7
+            load_const 5
+            cmpGTE
+            store_local x
+            """);
+
+        assertEquals((Integer) 1, vars.get("x"));
+    }
+
+
 }
