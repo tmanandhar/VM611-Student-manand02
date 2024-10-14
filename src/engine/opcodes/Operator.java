@@ -86,9 +86,9 @@ public enum Operator {
         case SUB -> op2 - op1;
         case MUL -> op1 * op2;
         case DIV -> op2 / op1;
-        case EQ -> op1 == op2 ? 0 : 1;
-        case MOD -> op1 % op2;
-        case NEQ -> op2 != op1 ? 0 : 1;
+        case EQ -> op2 == op1 ? 1 : 0;
+        case MOD -> op2 % op1;
+        case NEQ -> op2 != op1 ? 1 : 0;
         case LT -> op2 < op1 ? 1 : 0;
         case LTE -> op2 <= op1 ? 1 : 0;
         case GT -> op2 > op1 ? 1 : 0;

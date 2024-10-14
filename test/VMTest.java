@@ -72,7 +72,7 @@ public class VMTest {
             store_local x
             """);
 
-        assertEquals((Integer) 2, vars.get("x"));
+        assertEquals((Integer) 5, vars.get("x"));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class VMTest {
             store_local x
             """);
 
-        assertEquals((Integer) 1, vars.get("x"));
+        assertEquals((Integer) 0, vars.get("x"));
     }
 
     @Test
@@ -96,7 +96,7 @@ public class VMTest {
             store_local x
             """);
 
-        assertEquals((Integer) 0, vars.get("x"));
+        assertEquals((Integer) 1, vars.get("x"));
     }
 
     @Test
