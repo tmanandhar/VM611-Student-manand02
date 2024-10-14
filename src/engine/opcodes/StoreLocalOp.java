@@ -7,7 +7,8 @@ import java.util.Stack;
  * Stores a value from the stack into a local variable.
  */
 public class StoreLocalOp implements Opcode {
-    private final String varName;
+
+    private  final String varName;
 
     public StoreLocalOp(String varName) {
         this.varName = varName;
@@ -15,10 +16,8 @@ public class StoreLocalOp implements Opcode {
 
     @Override
     public int execute(int pc, Stack<Integer> opStack, Map<String, Integer> localVars) {
-        if (opStack.isEmpty()) {
-            throw new RuntimeException("Stack is empty. Cannot store value into local variable '" + varName + "'.");
-        }
-        localVars.put(varName, opStack.pop());
+        Integer integer = opStack.pop();
+        localVars.put(varName, integer);
         return pc + 1;
     }
 }
