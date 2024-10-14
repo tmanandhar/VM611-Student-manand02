@@ -8,11 +8,15 @@ import java.util.Stack;
  */
 public class LoadConstOp implements Opcode {
 
+    private final int  value;
+
     public LoadConstOp(int value) {
+        this.value = value;
     }
 
     @Override
     public int execute(int pc, Stack<Integer> opStack, Map<String, Integer> localVars) {
+        opStack.push(value);
         return pc + 1;
     }
 

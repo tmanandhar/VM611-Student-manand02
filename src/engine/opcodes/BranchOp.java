@@ -13,7 +13,11 @@ public class BranchOp implements Opcode {
         FALSE
     }
 
+    private final Type type;
+    private final int dest;
     public BranchOp(Type type, int dest) {
+        this.type = type;
+        this.dest = dest;
     }
 
     @Override

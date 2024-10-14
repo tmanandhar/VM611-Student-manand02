@@ -4,13 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import engine.VMThread;
-import engine.opcodes.BinaryOp;
-import engine.opcodes.BranchOp;
-import engine.opcodes.LoadConstOp;
-import engine.opcodes.LoadLocalOp;
-import engine.opcodes.Opcode;
-import engine.opcodes.Operator;
-import engine.opcodes.StoreLocalOp;
+import engine.opcodes.*;
 
 /**
  * Useful methods for testing.
@@ -49,7 +43,7 @@ public class TestUtil {
      * @return the opcode
      */
     private static Opcode createOpcode(String[] tokens) {
-        String opName = tokens[0];
+        String opName = tokens[0].trim();
 
         Operator type = Operator.fromInstruction(opName);
         if (type != null) {
