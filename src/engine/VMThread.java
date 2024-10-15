@@ -20,16 +20,19 @@ public class VMThread {
 
     /**
      * Runs the opcodes, and returns the resulting local variables.
-     * 
+     *
      * @return the local variables
      */
     public Map<String, Integer> run() {
-        Stack<Integer> stack = new Stack<>();
-        Map<String, Integer> result = new HashMap<>();
-        int count = 0;
-        for (Opcode opCode : opCodes) {
-           count = opCode.execute(count,  stack, result);
+        Map<String, Integer> localVars = new HashMap<>();
+        Stack<Integer> opStack = new Stack<>();
+        int pc = 0;  // Program counter starts at 0
+
+        while (pc < opCodes.size()) {
+            Opcode currentOpcode = opCodes.get(pc);
+            pc = currentOpcode.execute(pc, opStack, localVars);  // Execute the current opcode
         }
-        return result;
+
+        return localVars;
     }
 }
