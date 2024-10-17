@@ -83,6 +83,16 @@ public enum Operator {
     public int apply(int op1, int op2) {
         return switch (this) {
         case ADD -> op1 + op2;
+        case SUB -> op2 - op1;
+        case MUL -> op1 * op2;
+        case DIV -> op2 / op1;
+        case EQ -> op2 == op1 ? 1 : 0;
+        case MOD -> op2 % op1;
+        case NEQ -> op2 != op1 ? 1 : 0;
+        case LT -> op2 < op1 ? 1 : 0;
+        case LTE -> op2 <= op1 ? 1 : 0;
+        case GT -> op2 > op1 ? 1 : 0;
+        case GTE -> op2 >= op1 ? 1 : 0;
         default -> throw new RuntimeException("Unknown operator: " + this);
         };
     }
